@@ -46,6 +46,7 @@ if col1.button('Detect'):
     class_names=['Parisitized','Uninfected']
     string=class_names[np.argmax(result)]
     st.header(string)
+    st.subheader("Accuracy score: 95.603")
     
 if col2.button('Show Image'):
     if imageFile is not None:
