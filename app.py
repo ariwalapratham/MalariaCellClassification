@@ -9,8 +9,7 @@ def load_model():
 model = load_model()
     
 # File Processing Pkgs
-from PIL import Image, ImageOps
-import cv2
+from PIL import Image
 import numpy as np
 
 def import_and_predict(image_data,model):
@@ -42,6 +41,7 @@ col1, col2 = st.columns(2, gap="small")
 
 if col1.button('Detect'):
 
+    st.image(load_image(imageFile), width=200)
     result = import_and_predict(imageFile,model)
     class_names=['Parisitized','Uninfected']
     string=class_names[np.argmax(result)]
